@@ -45,8 +45,9 @@ function ConsoleTransport (configs) {
 
         if (me.levels.length === 0 || (me.levels.length > 0 && me.levels.indexOf(level) > -1)) {
             var prefix = me.timestamp ? ('[' + (new Date()).toJSON() + ' - ' + level + ']: ') : ('[' + level + ']: '),
-                msg = prefix + message + ' ' + util.inspect(metadata);
+                msg = prefix + message;
 
+            if (metadata) msg += ' ' + util.inspect(metadata);
             if (me.colorize && me.colors[level].length > 0) console.log(msg[me.colors[level]]);
             else console.log(msg);
 
