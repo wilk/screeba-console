@@ -1,0 +1,27 @@
+{
+  "name": "screeba-console",
+  "version": "0.0.0",
+  "description": "Console transport for Screeba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilk/screeba-console"
+  },
+  "keywords": [
+    "screeba",
+    "logger",
+    "transport",
+    "console"
+  ],
+  "author": "Vincenzo (Wilk) Ferrari <wilk3ert@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "5468517b062814aec74f64ddf073cc7cd56be4fe",
+  "dependencies": {
+    "colors": "~0.6.2",
+    "q": "~1.0.1"
+  }
+}
