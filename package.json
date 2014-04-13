@@ -1,6 +1,6 @@
 {
   "name": "screeba-console",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Console transport for Screeba",
   "main": "index.js",
   "scripts": {
