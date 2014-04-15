@@ -48,8 +48,9 @@ function ConsoleTransport (configs) {
                 msg = prefix + message;
 
             if (metadata) msg += ' ' + util.inspect(metadata);
-            if (me.colorize && me.colors[level].length > 0) console.log(msg[me.colors[level]]);
-            else console.log(msg);
+            if (me.colorize && me.colors[level].length > 0) msg = msg[me.colors[level]];
+
+            console.log(msg);
 
             if (typeof callback === 'function') callback(null, msg);
             deferred.resolve(msg);
