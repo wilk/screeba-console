@@ -18,7 +18,7 @@ function ConsoleTransport (configs) {
     var me = this;
 
     configs = configs || {};
-    me.levels = configs.levels || [];
+    me.levels = configs.levels || ['info', 'warning', 'error'];
     me.timestamp = configs.timestamp || true;
     me.colorize = configs.colorize || true;
     me.colors = {
@@ -31,6 +31,12 @@ function ConsoleTransport (configs) {
         me.colors = configs.colors;
         colors.setTheme(me.colors);
     }
+
+    me.levels.forEach(function (level) {
+        me[level] = function (message, metadata, callback) {
+            return me.log(level, message, metadata, callback);
+        };
+    });
 
     /**
      * It logs a message at the specified level
